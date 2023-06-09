@@ -1,0 +1,56 @@
+
+comment:
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int(11)      | NO   | PRI | NULL    | auto_increment |
+| author       | varchar(255) | YES  |     | NULL    |                |
+| comment_text | varchar(255) | YES  |     | NULL    |                |
+| post_id      | int(11)      | YES  | MUL | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+
++----+-----------+-----------------------------------------------------+---------+
+| id | author    | comment_text                                        | post_id |
++----+-----------+-----------------------------------------------------+---------+
+| 12 | Fanatik   | Napred Nole, Srbija je uz tebe i tvojoh 100 milina! |       2 |
+| 13 | Samo ja   | otresi ga kao ciga sestru!                          |       2 |
+| 14 | Stru?njak | Ti si na? MVP, Ameri glupi nemaju pojma o ko?arci!  |       4 |
+| 15 | stefan    | ajmo Nole!                                          |       2 |
++----+-----------+-----------------------------------------------------+---------+
+
+posts:
++-----------+--------------+------+-----+---------------------+-------------------------------+
+| Field     | Type         | Null | Key | Default             | Extra                         |
++-----------+--------------+------+-----+---------------------+-------------------------------+
+| id        | int(11)      | NO   | PRI | NULL                | auto_increment                |
+| title     | varchar(255) | NO   |     | NULL                |                               |
+| body      | text         | YES  |     | NULL                |                               |
+| author    | varchar(100) | YES  |     | NULL                |                               |
+| created_at | timestamp    | NO   |     | current_timestamp() | on update current_timestamp() |
++-----------+--------------+------+-----+---------------------+-------------------------------+
+
+
+
+UPDATE posts SET title = 'Niko nikada kao Srbin! Jokić ispisao istoriju, a pogledajte kako je to uradio', body = 'Nakon sumorne druge utakmice i lošeg izdanja gotovo svih igrača koji ne nose ime i prezime dvostrukog MVP-a, direktno iz Kolorada na Floridu je stigao odgovor; Nagetsi se pitaju za sve u ovoj seriji!', author = 'Dejan Janjić', created_at = '2023-06-08 14:32:00' WHERE id = 4;
+
+DELETE FROM comments WHERE id = 1;
+
++----------------+
+| Tables_in_blog |
++----------------+
+| comments       |
+| posts          |
++----------------+
+
+git:
+
+ls
+cd
+git init
+git remote add origin <gitlink>
+git remote -v
+git add.
+git commit -m "first commit"
+git push origin master
+
+get help
